@@ -11,22 +11,28 @@ import { SubjectOutlined, AddCircleOutlineOutlined } from '@material-ui/icons'
 
 const drawerWidth = 240
 
-const useStyle = makeStyles({
-  page: {
+const useStyle = makeStyles((theme) => {
+  return {
+    page: {
       backgroundColor: "#f9f9f9",
-      width: "100%"
-  },
-  drawer: {
-    width: drawerWidth
-  },
-  drawerPaper: {
-    width: drawerWidth
-  },
-  root: {
-    display: 'flex'
-  },
-  active: {
-    backgroundColor: "#f4f4f4"
+      width: "100%",
+      padding: theme.spacing(3)
+    },
+    drawer: {
+      width: drawerWidth
+    },
+    drawerPaper: {
+      width: drawerWidth
+    },
+    root: {
+      display: 'flex'
+    },
+    active: {
+      backgroundColor: "#f4f4f4"
+    },
+    title: {
+      padding: theme.spacing(2)
+    }
   }
 })
 
@@ -59,7 +65,7 @@ export default function Layout({ children }) {
         anchor="left"
         classes={{ paper: classes.drawerPaper }}>
         <div>
-          <Typography variant="h5">
+          <Typography variant="h5" className={classes.title}>
             NKDuy Notes
           </Typography>
         </div>
